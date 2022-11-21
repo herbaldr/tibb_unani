@@ -1,7 +1,6 @@
-import 'views/home_page_screen.dart';
+import 'package:tibb_unani/views/screen_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'models/user_model.dart';
 import 'services/auth_services.dart';
 import 'views/auth_screens/sign_in_screen.dart';
@@ -17,7 +16,7 @@ class Wrapper extends StatelessWidget {
         builder: (_, AsyncSnapshot<User?> snapshot){
           if (snapshot.connectionState == ConnectionState.active){
             final User? user = snapshot.data;
-            return user == null ? HomePageScreen() : SignInScreen();
+            return user == null ?  SignInScreen() : ScreenNavigation();
           } else {
             return Scaffold(
               body: Center(

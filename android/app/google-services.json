@@ -7,83 +7,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:626461240558:android:5b4e010cb8ce2e773897ff",
+        "mobilesdk_app_id": "1:626461240558:android:69d694bb37186bd23897ff",
         "android_client_info": {
-          "package_name": "com.example.firebase_firestore"
+          "package_name": "com.musalleh.tibb_unani"
         }
       },
       "oauth_client": [
         {
-          "client_id": "626461240558-7fjto46p1g5tie8rp5043il4g9o7ll65.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDvWMbhNqu9Qvqqatrm7Hbe1wCrlyYEmSk"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "626461240558-7fjto46p1g5tie8rp5043il4g9o7ll65.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:626461240558:android:6860d2f0c7cb57363897ff",
-        "android_client_info": {
-          "package_name": "com.example.hikmatonline"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "626461240558-4c04075deens16mpo8f90ghlolvncn3b.apps.googleusercontent.com",
+          "client_id": "626461240558-mgpgec7cuvcacvmk6v2bavomkqu7b929.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.hikmatonline",
-            "certificate_hash": "c6713500799e32398afc57dfcba0ee600e5b271e"
-          }
-        },
-        {
-          "client_id": "626461240558-7fjto46p1g5tie8rp5043il4g9o7ll65.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDvWMbhNqu9Qvqqatrm7Hbe1wCrlyYEmSk"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "626461240558-7fjto46p1g5tie8rp5043il4g9o7ll65.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:626461240558:android:d684906cbf202a243897ff",
-        "android_client_info": {
-          "package_name": "com.example.tibb_unani"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "626461240558-j6uu2b87ai5jkhorchua819k1ngk7kik.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.tibb_unani",
+            "package_name": "com.musalleh.tibb_unani",
             "certificate_hash": "c6713500799e32398afc57dfcba0ee600e5b271e"
           }
         },

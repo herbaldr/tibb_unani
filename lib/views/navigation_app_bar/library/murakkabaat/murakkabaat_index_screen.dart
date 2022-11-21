@@ -1,20 +1,22 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../../utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../utils/colors.dart';
+import 'murakkabaat_post_screen.dart';
 
-import 'mufridaat_post_screen.dart';
 
-class MufridaatIndexScreen extends StatefulWidget {
-  const MufridaatIndexScreen({Key? key}) : super(key: key);
+class MurakkabaatIndexScreen extends StatefulWidget {
+
+  String bookName;
+  MurakkabaatIndexScreen({required this.bookName});
 
   @override
-  State<MufridaatIndexScreen> createState() => _MufridaatIndexScreenState();
+  State<MurakkabaatIndexScreen> createState() => _MurakkabaatIndexScreenState();
 }
 
-class _MufridaatIndexScreenState extends State<MufridaatIndexScreen> {
+class _MurakkabaatIndexScreenState extends State<MurakkabaatIndexScreen> {
 
-  Stream<QuerySnapshot<Map<String, dynamic>>> _stream = FirebaseFirestore.instance.collection('mufridaat').snapshots();
+  Stream<QuerySnapshot<Map<String, dynamic>>> _stream = FirebaseFirestore.instance.collection('murakkabaat').snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class _MufridaatIndexScreenState extends State<MufridaatIndexScreen> {
       backgroundColor: primaryColor,
       // App Bar starting from here...
       appBar: AppBar(
-        title: Text("Book Name"),
+        title: Text("${widget.bookName}"),
         centerTitle: true,
         backgroundColor: secondPrimaryColor,
       ),
@@ -45,17 +47,35 @@ class _MufridaatIndexScreenState extends State<MufridaatIndexScreen> {
           }
           return Container(
             margin: EdgeInsets.all(15),
-            child: ListView.builder(
+            child: snapshot.data == null? Center(
+              child: Text(
+                "There is no data in the server",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: Get.height*0.1,
+                    color: textWhiteColor
+                ),
+              ),
+            ) :
+            Directionality(
+              textDirection: TextDirection.rtl,
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    mainAxisSpacing: 18,
+                    crossAxisSpacing: 18,
+                    childAspectRatio: 1/1
+                ),
                 itemCount: snapshot.data!.docs.length,
                 itemBuilder: (context,index){
                   // clickable button...
                   return InkWell(
                     onTap: (){
                       Get.to(
-                        MufridaatPostScreen(
-                          documentId: snapshot.data!.docs[index].id,
-                          indexName: snapshot.data!.docs[index].get("title"),
-                        )
+                          MurakkabaatPostScreen(
+                            documentId: snapshot.data!.docs[index].id,
+                            indexName: snapshot.data!.docs[index].get("title"),
+                          )
                       );
                     },
                     child: Container(
@@ -65,10 +85,11 @@ class _MufridaatIndexScreenState extends State<MufridaatIndexScreen> {
                         boxShadow: kElevationToShadow[4],
                       ),
                       margin: EdgeInsets.symmetric(vertical: 8),
-                      padding: EdgeInsets.symmetric(vertical: 12),
+                      padding: EdgeInsets.symmetric(vertical: 18),
                       alignment: Alignment.center,
                       child: Text(
                         '${snapshot.data!.docs[index].get("title")}',
+                        textDirection: TextDirection.rtl,
                         style: TextStyle(
                             color: textWhiteColor.withOpacity(0.8),
                             fontWeight: FontWeight.bold,
@@ -78,6 +99,7 @@ class _MufridaatIndexScreenState extends State<MufridaatIndexScreen> {
                     ),
                   );
                 }
+              )
             ),
           );
         }

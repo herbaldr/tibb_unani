@@ -47,7 +47,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDvWMbhNqu9Qvqqatrm7Hbe1wCrlyYEmSk',
-    appId: '1:626461240558:android:d684906cbf202a243897ff',
+    appId: '1:626461240558:android:69d694bb37186bd23897ff',
     messagingSenderId: '626461240558',
     projectId: 'hikmatonline-d9fbb',
     storageBucket: 'hikmatonline-d9fbb.appspot.com',

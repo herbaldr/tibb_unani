@@ -1,9 +1,39 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 // User model for storing uid...
-class User{
-  String? userId;
+class UserModel{
+  String? uid;
+  String? firstName;
+  String? lastName;
   String? email;
+  String? password;
 
-  User({this.userId, this.email});
+  UserModel({this.uid,this.firstName,this.lastName,this.email,this.password});
+
+  /// get data from server ...
+  factory UserModel.fromMap(map){
+    return UserModel(
+      uid: map['uid'],
+      firstName: map['firstName'],
+      lastName: map['lastName'],
+      email: map['email'],
+      password: map['password'],
+    );
+  }
+
+  /// send data to server...
+  Map<String,dynamic> toMap(){
+    return{
+      'uid': uid,
+      'firstName': firstName,
+      'lastName': lastName,
+      'email': email,
+      'password': password,
+    };
+  }
+}
+
+class User{
+  final String? uid;
+  final String? email;
+
+  User(this.uid,this.email);
 }
